@@ -6,7 +6,7 @@ FROM nvidia/cuda:12.8.1-cudnn-runtime-ubuntu22.04
 ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=1 \
-    HF_HUB_ENABLE_HF_TRANSFER=1
+    HF_XET_HIGH_PERFORMANCE=1
 
 # ---- System dependencies ----
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -37,7 +37,9 @@ WORKDIR /ComfyUI/custom_nodes
 RUN git clone https://github.com/ltdrdata/ComfyUI-Manager.git && \
     git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack.git && \
     git clone https://github.com/rgthree/rgthree-comfy && \
-    git clone https://github.com/chflame163/ComfyUI_LayerStyle
+    git clone https://github.com/chflame163/ComfyUI_LayerStyle && \
+    git clone https://github.com/kosinkadink/ComfyUI-VideoHelperSuite && \
+    git clone https://github.com/kijai/ComfyUI-WanVideoWrapper
 RUN for d in */ ; do \
         if [ -f "${d}requirements.txt" ]; then \
             pip install -r "${d}requirements.txt" ; \
