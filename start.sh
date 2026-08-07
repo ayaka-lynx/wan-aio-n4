@@ -50,7 +50,7 @@ dl_civitai() {
 }
 
 # ---- Download models ----
-dl Phr00t/WAN2.2-14B-Rapid-AllInOne Mega-v12/wan2.2-rapid-mega-aio-nsfw-v12.2.safetensors
+dl Phr00t/WAN2.2-14B-Rapid-AllInOne Mega-v12/wan2.2-rapid-mega-aio-nsfw-v12.2.safetensors checkpoints
 
 # ---- Boot ComfyUI ----
 cd /ComfyUI
